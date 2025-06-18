@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Parámetros del Bot ANSV</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1>Administración de Parámetros del Bot ANSV</h1>
+
+        <div id="message-area" class="message-area"></div>
+
+        <h2>Listado de Parámetros</h2>
+        <table id="parametros-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Valor</th>
+                    <th>Tipo de Dato</th>
+                    <th>Descripción</th>
+                    <th>Última Modificación</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+
+        <h2>Añadir / Editar Parámetro</h2>
+        <form id="parametro-form">
+            <input type="hidden" id="parametro-id">
+            
+            <label for="nombre_parametro">Nombre del Parámetro:</label>
+            <input type="text" id="nombre_parametro" required>
+
+            <label for="valor_parametro">Valor del Parámetro:</label>
+            <input type="text" id="valor_parametro" required>
+
+            <label for="tipo_dato">Tipo de Dato:</label>
+            <select id="tipo_dato">
+                <option value="">Seleccionar Tipo</option>
+                <option value="STRING">STRING</option>
+                <option value="INTEGER">INTEGER</option>
+                <option value="FLOAT">FLOAT</option>
+                <option value="BOOLEAN">BOOLEAN</option>
+            </select>
+
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" rows="3"></textarea>
+
+            <button type="submit" id="submit-button">Añadir Parámetro</button>
+            <button type="button" id="cancel-edit-button" style="display: none;">Cancelar Edición</button>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
